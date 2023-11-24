@@ -9,7 +9,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url("../moon/img/fon2.jpg");
+    background-image: url("../img/fon2.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
