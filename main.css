@@ -13,39 +13,72 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+body audio {
+opacity: 0;
 }
 
 .img_moon img {
-    width: 500px;
-    height: 500px;
     animation: spin 160s linear infinite;
-    z-index: 1;
 }
 
-.img_comet1 {
-    position: fixed;
+.img_asteroid {
     top: 0;
-    right: 0;
+    left: 0;
+    position: absolute;
+    opacity: 0;
+    animation-timing-function: linear;
+    animation-iteration-count: inherit;
 }
 
-.img_comet1 img {
-    width: 100px;
-    height: 100px;
-    transform: translate(calc(100vw + 140px), calc(100vh - 140px)); /* Начальное положение за пределами экрана */
-
-    animation: fly1 700ms linear forwards 10s;
+.img_asteroid:nth-child(1) {
+    animation-duration: 2s;
+    animation-name: fly1;
+    animation-delay: 2s;
 }
 
-.img_comet2 {
-    position: fixed;
-    top: 0;
-    right: 0;
+.img_asteroid:nth-child(2) {
+    animation-duration: 700ms;
+    animation-name: fly2;
+    animation-delay: 5s;
 }
 
-.img_comet2 img {
-    width: 100px;
-    height: 100px;
+.img_asteroid:nth-child(3) {
+    animation-duration: 2s;
+    animation-name: fly3;
+    animation-delay: 11s;
+}
 
+.img_asteroid:nth-child(4) {
+    animation-duration: 4s;
+    animation-name: fly4;
+    animation-delay: 10s;
+}
+
+.img_asteroid:nth-child(6) {
+    animation-duration: 4s;
+    animation-name: fly6;
+    animation-delay: 23s;
+}
+
+.img_asteroid:nth-child(7) {
+    animation-duration: 4s;
+    animation-name: fly7;
+    animation-delay: 8s;
+}
+
+.img_asteroid:nth-child(8) {
+    animation-duration: 700ms;
+    animation-name: fly2;
+    animation-delay: 20s;
+}
+
+.img_asteroid:nth-child(9) {
+    animation-duration: 2s;
+    animation-name: fly1;
+    animation-delay: 17s;
 }
 
 @keyframes spin {
@@ -55,10 +88,80 @@ body {
 
 @keyframes fly1 {
     0% {
-        transform: translate(0, 0);
+        transform: translate(calc(-100vw - 1400px), -50vh);
+        opacity: 1;
     }
 
     100% {
-        transform: translate(calc(-100vw - 140px), calc(100vh - 140px));
+        transform: translate(calc(100vw + 600px), 900px);
+        opacity: 1;
+    }
+}
+
+@keyframes fly2 {
+    0% {
+        transform: translate(calc(100vw - 8000px), 0px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(400px, calc(100vh + 600px));
+        opacity: 1;
+    }
+}
+
+@keyframes fly3 {
+    0% {
+        transform: translate(calc(-100vw - 1400px), 400px);
+        opacity: 1;
+
+    }
+
+    100% {
+        transform: translate(calc(100vw + 600px), 400px);
+        opacity: 1;
+
+    }
+}
+
+
+@keyframes fly4 {
+    0% {
+        margin-top: 200px;
+        margin-left: -100px; 
+        opacity: 1;
+    }
+    100% {
+        margin-top: 1030px;
+        margin-left: 900px; 
+        opacity: 1;
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fly6 {
+    0% {
+        transform: translate(calc(100vw + 1400px), 50vh);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(calc(-100vw - 1400px), 90vh);
+        opacity: 1;
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fly7 {
+    0% {
+        
+        transform: translate(calc(100vw + 1040px), 400px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(calc(-100vw - 80px), 400px);
+        opacity: 1;
+        transform: rotate(360deg);
     }
 }
